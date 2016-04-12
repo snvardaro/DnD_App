@@ -10,7 +10,7 @@ public class TxtTls
 	{
 		System.out.println("TEST MSG: " + string);
 	}
-	public static void in(E input)
+	public static < E > void in(E input)
 	{
 		Scanner Input = new Scanner(System.in);
 		input = Input.nextLine();
