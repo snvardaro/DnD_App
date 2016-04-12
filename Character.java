@@ -1,9 +1,9 @@
 
 public class Character 
 {
-	//Abilities
-	String n; //name
-	String r; //race
+    //Abilities
+    String n; //name
+    String r; //race
     String cl; //class
     double lvl; //level
     double s; //strength
@@ -63,24 +63,75 @@ public class Character
     
     String setr()
     {
+    	out("Please select " + this.n + "'s race:\n");
+    	
+    	/*
+    	out("\t1) Human");
+    	out("\t2) Elf");
+    	out("\t3) Halfling");
+    	out("\t4) Orc");
+    	in(String Race);
+    	*/
+    	int row;
+    	int race;
+    	do
+    	{
+	    	for(row=0; row < rList.length(); row++)
+	    	{
+	    		out("\t" + (row+1) + ") " + rList[row]);
+	    	}
+	    	out("Input: ");
+	    	in(String Race);
+	    	int race = Integer.toString(Race);
+	    	if(race > 0 && race < rList.length())
+	    	{
+	    		this.r = rList[race].n;
+	    	}
+	    	else
+	    	{
+	    		out("\n\tIncorrect selection.  Please try again...\n");
+	    	}
+    	}
+    	while(race > 0 && race < rList.length())
     	
     	return this.r;
     }
     
     String setcl()
     {
+    	out("Please select " + this.n + "'s class:\n");
+    	int row;
+    	int clss;
+    	do
+    	{
+	    	for(row=0; row < cList.length(); row++)
+	    	{
+	    		out("\t" + (row+1) + ") " + cList[row]);
+	    	}
+	    	out("Input: ");
+	    	in(String Clss);
+	    	int clss = Integer.toString(Clss);
+	    	if(clss > 0 && clss < cList.length())
+	    	{
+	    		this.cl = cList[race].n;
+	    	}
+	    	else
+	    	{
+	    		out("\n\tIncorrect selection.  Please try again...\n");
+	    	}
+    	}
     	
     	return this.cl;
     } 
     
     void setabil()
     {
-    	
+    	//based on other stats
     }
     
     void sethp()
     {
-    	//this.thp = [stuff]
+    	//this.thp = [stuff]a
     	//this.chp = this.thp;
     }
     
