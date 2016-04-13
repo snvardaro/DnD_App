@@ -104,11 +104,50 @@ public class ArrTls
 			return -1;
 	}
 	
-	public static < E > void removeElement (E array, int& size, E value)
+	public static < E > int 2DbinarySearch(const E list[][], , int column, int listLength, E searchItem)
+	{
+		int first = 0;
+		int last = listLength - 1;
+		int mid;
+
+		Boolean found = false;
+
+		while (first <= last && !found)
+		{
+			mid = (first + last) / 2;
+
+			if (list[mid][column] == searchItem)
+				found = true;
+			else 
+				if (searchItem < list[mid][column])
+					last = mid - 1;
+				else
+					first = mid + 1;
+		}
+
+		if (found) 
+			return mid;
+		else
+			return -1;
+	}
+	
+	public static < E > void removeElement (E array, int size, E value)
 	{
 	  int toBeMoved = (binarySearch(array, size, value)) + 1;
 	  while (toBeMoved < size) 
 	  {
+		array[toBeMoved] = array[toBeMoved+1];
+		++toBeMoved;
+	  }
+	  --size;
+	}
+	
+	public static < E > void removeRow (E array, int columns, int size, E value)
+	{
+	  int toBeMoved = (binarySearch(array, size, value)) + 1;
+	  while (toBeMoved < size) 
+	  {
+		while() //while not at the max # of columns
 		array[toBeMoved] = array[toBeMoved+1];
 		++toBeMoved;
 	  }
