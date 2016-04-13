@@ -21,19 +21,31 @@ public class Inventory
 	}
 	
 	void addItem(Character Char, String iname)
-    {
-    	int irow;
-    	int icol=0;
-    	for(irow=0; irow < this.itmct; irow++)
-    	{
-    		if(AllItems[irow][icol] == iname)
-    			
-    		for(icol; icol < 11; icol++)
-    		{
-    			
-    		}
-    	}
-    	Char.inv.itmct = this.itm.length;
-    }
+	{
+	    	Boolean indx;
+	    	int search;
+	    	int irow, icol;
+	    	
+	    	indx = 2DbinarySearch(AllItems[][], 0, AllItems.length(), iname);
+	    	
+	    	if(indx > -1)
+	    	{	
+			search = binarySearch(this.itm[].n, this.itmct, iname);
+			if(search > -1)
+			{
+				++this.itm[search].c;
+			}
+			else 
+		    	{
+		    		// sets this.itm[inserted row in order] = Allitems[indx][all columns]	
+		    	}
+	    	}
+	    	else
+	    	{
+	    		indx = 2DbinarySearch(AllItems[][], 0, AllItems.length(), iname);
+	    	}
+	    	
+	    	Char.inv.itmct = this.itm.length;
+	}
 	
 }
