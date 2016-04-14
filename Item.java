@@ -12,6 +12,7 @@ public class Item
 	double inmod;
 	double wmod;
 	double chmod;
+	public enum t={Weapon, Consumable, Re-usable, Quest};
 	String desc;
 	
 	String setDesc()
