@@ -15,7 +15,23 @@ public class Item
 	public enum t={Weapon, Consumable, Re-usable, Quest};
 	String desc;
 	
-	String setDesc()
+	public Item(String n, int c, double wt, double smod, double comod, double dmod, double inmod, double wmod, double chmod, enum t, String desc)
+	{
+		this.n = n;
+		this.c = c;
+		this.wt = wt;
+		this.twt = c*wt;
+		this.smod = smod;
+		this.comod = comod;
+		this.dmod = dmod;
+		this.inmod = inmod;
+		this.wmod = wmod;
+		this.chmod = chmod;
+		this.t = t;
+		this.desc = desc;
+	}
+	
+	public String setDesc()
 	{
 		Scanner Desc = new Scanner(System.in);
 		desc = Desc.nextLine();
@@ -23,9 +39,15 @@ public class Item
 		return desc;
 	}
 	
-	void ItemLog()
+	public void ItemLog()
 	{
 		// Sets GSheet"ItemLog" to AllItems[][]
+	}
+	
+	public void add(int count)
+	{
+		this.c = count;
+		this.twt = this.wt * this.c;
 	}
 	
 }
